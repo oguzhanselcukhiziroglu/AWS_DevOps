@@ -39,7 +39,7 @@ Linux is free. Linux is good. Linux is hope.
 The following sed command replaces the word “linux” with “ubuntu” in the file.
 
 ```bash
-sed 's/linux/unutu/' sed.txt
+sed 's/linux/ubuntu/' sed.txt
 ```
 - `s` specifies the substitution operation. 
 - The `/` are delimiters. 
