@@ -459,7 +459,7 @@ Step 1: Create `Add-Policy`;
 - Select `Simple Scaling` as Policy Type
 
 ```text
-Scaling Policy Name : First Scaling Policy-Add
+Scaling Policy Name : First Scaling Policy-Remove
 ```
 
 - Open  `Create a CloudWatch Alarm` in `new window` 
