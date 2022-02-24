@@ -188,7 +188,7 @@ ls
 
 ```text
 cd efs
-sudo nano example.txt
+sudo nano example.txt # vim ile de girebilirsin
 ```
 - Write something, save and exit;
 ```text
