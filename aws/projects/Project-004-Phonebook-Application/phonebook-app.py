@@ -135,11 +135,11 @@ def add_record():
         if phone_number is None or phone_number.strip() == "": 
             return render_template('add-update.html', not_valid=True, message='Invalid input: Phone number can not be empty', show_result=False, action_name='save', developer_name='Oguzhan')
         elif not phone_number.isdecimal(): 
-            return render_template('add-update.html', not_valid=True, message='Invalid input: Phone number should be in numeric format', show_result=False, action_name='save', developer_name='Serdar')
+            return render_template('add-update.html', not_valid=True, message='Invalid input: Phone number should be in numeric format', show_result=False, action_name='save', developer_name='Oguzhan')
         result_app = insert_person(name, phone_number)
-        return render_template('add-update.html', show_result=True, result_html=result_app, not_valid=False, action_name='save', developer_name='Serdar') 
+        return render_template('add-update.html', show_result=True, result_html=result_app, not_valid=False, action_name='save', developer_name='Oguzhan') 
     else:
-        return render_template('add-update.html', show_result=False, not_valid=False, action_name='save', developer_name='Serdar')
+        return render_template('add-update.html', show_result=False, not_valid=False, action_name='save', developer_name='Oguzhan')
 
 # Write a function named `update_record` which updates the record in the db using `GET` and `POST` methods,
 # using template files named `add-update.html` given under `templates` folder
