@@ -32,11 +32,11 @@ At the end of the this hands-on training, students will be able to;
 
 ### STEP 0 - Creating a RDS Instance if you have deleted in the former session.
 
-- First, lets create Security Group
+- First, lets create Security Group  # Bundan önce client için de bir tane ssh 22 portu açık sec group aç.
 
 ```text
 Name: DatabaseSecGrb
-Inbound: Mysql/Aurora ------>3306------> Anywhere
+Inbound: Mysql/Aurora ------>3306------> Anywhere # Derste client in sec group unu custom kısmından seçti (database için)
 ```
 
 - Go to the Amazon RDS Service and select Database section from the left-hand menu, click databases and then click Creating Database.
@@ -76,7 +76,7 @@ Master password: Pl123456789
 - DB instance size
 
 ```text
-Burstable classes (includes t classes) : db.t2.micro
+Burstable classes (includes t classes) : db.t2.micro # Include previous generation classes mavi olsun
 ```
 
 - Storage
@@ -102,7 +102,7 @@ Click Additional Connectivity Configuration;
 
 Subnet group                  : default
 Publicly accessible           : No
-VPC security groups           : DatabaseSecGrb
+VPC security groups           : DatabaseSecGrb # default'u kaldır
 Availability Zone             : No preference
 Database port                 : 3306
 ```
@@ -119,7 +119,7 @@ DB Authentication: Password authentication
 Initial DB name                   : clarusway
 DB parameter group & option group : default
 Automatic backups                 : enable
-Backup retention period           : 7 days (Explain how)
+Backup retention period           : 7 days (Explain how) # Enable automated backups, Copy tags to snapshots: unchecked, select window: yarım saatte bir
 
 Select window for backup to show snapshots
 Monitoring  : Unchecked
@@ -137,7 +137,7 @@ Deletion protection: *Disabled
 
 ```text
 AMI: Ubuntu 18.04
-Instance Type: t2.micro
+Instance Type: t2.micro            # tag: Name > db-client
 
 Security Group
   - SSH           -----> 22    -----> Anywhere
@@ -290,7 +290,7 @@ EXIT;
 
 - For `point in time recovery` PART (PART-4), please note down the current time. (Exp: August 12, 2020, 22:45:34, UTC +3) and let the students know:
 
-     -enter the time: 22:26:45
+     -enter the time: 22:29:35
 
 ## Part 2 - Taking a Snapshot from RDS DB Instance
 
@@ -481,7 +481,7 @@ there are only 4 records
   - Public accessibility
     *Yes
   - Availability zone, Security groups, Database options, Backup, Log exports, Maintenance
-    Keep it as is
+    Keep it as is                    # initial database name: clarusway, auto scaling'i de unchecked yaptık
   ```
 
 - Go to the MariaDB Client instance.
@@ -507,7 +507,7 @@ SELECT * FROM employees ORDER BY salary ASC;
 - Back up the `clarusway` db from RDS DB instance (`restored-from-point-in-time-RDS`) to the file named `backup.sql` on EC2 instance.
 
 ```bash
-mysqldump -h [restored-from-point-in-time-RDS endpoint] -u admin -p clarusway > backup.sql
+mysqldump -h [restored-from-point-in-time-RDS endpoint] -u admin -p clarusway > backup.sql      # ubuntu makinede iken bu işlemi yapıyoruz.
 ```
 
 - Show `backup.sql` file with `ls` command.
