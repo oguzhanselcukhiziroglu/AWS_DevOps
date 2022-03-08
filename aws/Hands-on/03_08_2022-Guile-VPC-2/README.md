@@ -161,7 +161,7 @@ Tag             :
 
 - Select created Nat Instance on EC2 list
 
-- Tab Actions Menu ----> Networking ----> Enable Source/Destination Check ---> Yes, Disable
+- Tab Actions Menu ----> Networking ----> Enable Source/Destination Check ---> Yes, Disable (Stop et)
 
 - Explain why we need to implement this process mentioned above
 
