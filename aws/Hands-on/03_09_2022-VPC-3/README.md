@@ -59,7 +59,7 @@ WARNING!!! ---> Be sure that NAT Gateway is in active status. Since the private 
 Security Group    : 
     Sec.Group Name : Private-Sec-Group
     Rules          : TCP  ---> 22 ---> Anywhere
-                     HTTP ---> 80 ---> Anywhere
+                     HTTP ---> 80 ---> Anywhere   # VPC - Clarus
 
 
 ### E. Configure Private instance in 'clarus-az1a-private-subnet' of 'clarus-vpc-a'.
