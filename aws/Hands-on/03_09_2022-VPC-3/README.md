@@ -146,7 +146,7 @@ WARNING!!! ---> Please do not terminate "NAT Gateway" and "Private WEB EC2" for 
 # STEP 1: Prep
 
 Security Group    : 
-    Sec.Group Name : Public-Sec-Group (Bastion Host)
+    Sec.Group Name : Public-Sec-Group (Bastion Host)  # vpc = clarus-vpc 
     Rules          : TCP --- > 22 ---> Anywhere
                      All ICMP IPv4  ---> Anywhere
                      HTTP--------> Anywhere
