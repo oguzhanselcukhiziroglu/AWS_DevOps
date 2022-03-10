@@ -2,8 +2,8 @@
 
 # 1.Create Sec.Groups:
 
-   Wordpress-BastionHost-SG: In bound : "SSH 22, HTTP 80,   > anywhere(0:/00000)"
-   MariaDB-SG: In bound :"Mysql 3306, SSH 22  > anywhere (0:/00000)"
+   Wordpress-BastionHost-SG: In bound : "SSH 22, HTTP 80,   > anywhere(0:/00000)"   # clarus-vpc-a'da oluştur
+   MariaDB-SG: In bound :"Mysql 3306, SSH 22  > anywhere (0:/00000)"   # clarus-vpc-a'da oluştur
    NAT-SG: In bound : "HTTP, HTTPS, SSH 22  > anywhere (0:/00000)" # No need for NAT-SG if you use NAT Gateway.
 
 # 2.Create EC2 that is installed LAMP with user data seen below for "Wordpress app in Public Subnet 1b"
