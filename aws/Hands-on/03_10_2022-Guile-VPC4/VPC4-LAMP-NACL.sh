@@ -100,7 +100,7 @@ sudo yum update -y   # Olmaz çünkü internete bağlı değiliz. NAT Gateway ku
 sudo yum install -y mariadb-server
 	
 # 12. Create NAT instance in "Public Subnet 1a" (Other public subnets will also work).
-# (You can also create a NAT Gateway for outbound connectivity)
+# (You can also create a NAT Gateway for outbound connectivity)    SEN NAT GATEWAY kur
 
     AMI: "NAT"
     VPC: "clarus-vpc-a"
@@ -122,7 +122,7 @@ Check "Stop" option from the pane.
 sudo yum update -y
 sudo yum install -y mariadb-server
 sudo systemctl start mariadb
-sudo systemctl enable mariadb
+sudo systemctl enable mariadb      # sudo systemctl status mariadb  
     
 ----> Warning!!! To be able to upload/update packages, http/https must be allowed in NAT Instance security group. 
 
@@ -154,7 +154,7 @@ USE mysql;
 SELECT Host, User, Password FROM user;
 
 # 25. Close mysql cli.
-EXIT;
+EXIT;   # Alternatifi iki defa Ctrl + D  ---  exit la çık
 
 # 26. Return back to "Wordpress Instance" to configure Word press database settings.
 cd /var/www/html/
@@ -172,7 +172,7 @@ sudo vi wp-config.php
 
 Esc :wq ---> Enter
 
-sudo systemctl restart httpd
+sudo systemctl restart httpd   # Bu aşamadan sonra kaydı izle. Database ile oynuyoruz. Yorumları vs görüyoruz. Dinamik websitesi bu.
 
 # 28. Check the browser using the WordPress instance Public Ip.
 # You will see the home page of Wordpress. Enter pasword,user name etc... Introduce WordPress.
