@@ -240,7 +240,7 @@ ssh ec2-user@[Your private EC2 private IP]
 
 ```
 aws s3 ls
-aws s3 ls clarusway-vpc-endpoint
+aws s3 ls clarusway-vpc-endpoint     # aws s3 ls clarusway-vpc-endpoint-oguzhan
 ```
 - go to private route table named "clarus-private-rt" on VPC service
 
@@ -262,10 +262,10 @@ aws s3 ls
 - click Create Endpoint
 ```text
 Service Category : AWS services
-Service Name     : com.amazonaws.us-east-1.s3
+Service Name     : com.amazonaws.us-east-1.s3    # first-endpoint
 Service Type     : gateway
 VPC              : clarus-vpc-a
-Route Table      : choose private one or both 
+Route Table      : choose private one or both    # service s3
 ```
 - Create Endpoint
 
