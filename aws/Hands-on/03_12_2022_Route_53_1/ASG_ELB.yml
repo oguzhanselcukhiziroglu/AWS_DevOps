@@ -1,30 +1,30 @@
 AWSTemplateFormatVersion: 2010-09-09
 
 Description: |
-  This temp creates an ASG behind an ALB.  
+  This temp creates an ASG behind an ALB.
 Parameters:
+  myVPC:
+    Description: Select your VPC
+    Type: AWS::EC2::VPC::Id
+
+  mySubnets:
+    Description: Select at least 2 subnets
+    Type: List<AWS::EC2::Subnet::Id>
+
   myKP:
-    Description: Select your KP
+    Description: Select your Key
     Type: AWS::EC2::KeyPair::KeyName
 
   myIT:
-    Description: Select the instance type
+    Description: Select instance type
     Type: String
-    Default: t2.micro
-    AllowedValues:
-      - t2.micro
-      - t3.micro
-      - t2.nano
-      - t3.nano
-
-  mySubnets:
-    Description: Please select at least 2 subnets. 
-    Type: List<AWS::EC2::Subnet::Id>
-
-  myVPC:
-    Description: Please select VPC 
-    Type: AWS::EC2::VPC::Id
-
+    Default: t2.micro 
+    AllowedValues: 
+     - t2.micro
+     - t3.micro
+     - t2.nano
+     - t3.nano
+  
 Mappings:
   RegionImageMap:
     us-east-1:
@@ -37,26 +37,25 @@ Mappings:
       AMI: ami-0dc8f589abe99f538
     eu-west-1:
       AMI: ami-058b1b7fe545997ae
-
+  
 Resources:
+  myALB:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      SecurityGroups:
+        - !GetAtt mySG.GroupId
+      Subnets: !Ref mySubnets
+      Type: application
 
   myListener:
     Type: AWS::ElasticLoadBalancingV2::Listener
     Properties:
       DefaultActions: # Required
         - Type: forward
-          TargetGroupArn: !Ref myTG 
+          TargetGroupArn: !Ref myTG
       LoadBalancerArn: !Ref myALB # Required
       Port: 80
       Protocol: HTTP
-
-  myALB:
-    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
-    Properties:
-      SecurityGroups:
-        - !GetAtt mySG.GroupId 
-      Subnets: !Ref mySubnets 
-      Type: application
 
   myASG:
     Type: AWS::AutoScaling::AutoScalingGroup
@@ -69,7 +68,7 @@ Resources:
         LaunchTemplateId: !Ref myLT
         Version: "1"
       MaxSize: "3" # Required
-      MinSize: "1" # Required
+      MinSize: "2" # Required
       TargetGroupARNs:
         - !Ref myTG
 
@@ -87,10 +86,10 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData:
-        ImageId: !FindInMap
-          - RegionImageMap
-          - !Ref AWS::Region
-          - AMI
+        ImageId: !FindInMap 
+         - RegionImageMap
+         - !Ref AWS::Region
+         - AMI
         InstanceType: !Ref myIT
         KeyName: !Ref myKP
         SecurityGroupIds:
@@ -132,24 +131,22 @@ Resources:
   mySG:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: "Enables SSH and HTTP" # Required
+      GroupDescription: Enables SSH and HTTP # Required
       SecurityGroupIngress:
-        -   CidrIp: 0.0.0.0/0
-            FromPort: 22
-            ToPort: 22
-            IpProtocol: tcp
-
-        -   CidrIp: 0.0.0.0/0
-            FromPort: 80
-            ToPort: 80
-            IpProtocol: tcp
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
       VpcId: !Ref myVPC
-
+  
 Outputs:
-
   AppUrl:
-    Description: Url of the ALB
-    Value: !Join
-      - ""
-      - - "http://"
-        - !GetAtt myALB.DNSName
+    Description: URL of the ALB
+    Value: !Join 
+       - ''
+       - - 'http://'
+         - !GetAtt myALB.DNSName
