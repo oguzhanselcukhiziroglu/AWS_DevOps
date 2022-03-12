@@ -33,8 +33,8 @@ At the end of the this hands-on training, students will be able to;
 ```bash
 Region: "N.Virginia"
 VPC: Default VPC
-Subnet: PublicA
-Sec Group: "Route 53 Sec"
+Subnet: PublicA       # derste subnete dokunmadık
+Sec Group: "Route 53 Sec"  # 22 ve 80 portları açık olacak
 
 user data: 
 
@@ -55,8 +55,8 @@ systemctl enable httpd
 ```bash
 Region: "N.Virginia"
 VPC: Default VPC
-Subnet: PublicA
-Sec Group: "Route 53 Sec"
+Subnet: PublicA     # derste subnete dokunmadık
+Sec Group: "Route 53 Sec"    # 22 ve 80 portları açık olacak
 
 user data:
 
@@ -75,7 +75,7 @@ systemctl enable httpd
 
 ### STEP 3: Create Static WebSite Hosting :
 
- 1. Create Static WebSite Hosting-1/ "www.[your domain name].net"
+ 1. Create Static WebSite Hosting-1/ "www.[your domain name].net"   # Block all public... unchecked olacak
  
   - Go to S3 service and create a bucket with sub-domain name: "www.[your sub-domain name].net"
   - Public Access "Enabled"
