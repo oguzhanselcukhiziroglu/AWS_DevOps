@@ -114,7 +114,7 @@ Step-1 - Invalidation
 
 - Select the "Invalidations" tab and click "Create Invalidation"
 
-- On the opening page enter "/ryu.jpg" and click "Invalidate". 
+- On the opening page enter "/ryu.jpg" and click "Invalidate". # INVALIDATE İŞLEMİ
 
 - After the invalidation process is completed, check the website and notice the image is updated now.
 
