@@ -35,7 +35,7 @@ STEP 1 : Prep - Creating S3 Bucket
 - Create a bucket of `clarusway.source.lambda` with following properties,
 
 ```text
-Bucket name                 : clarusway.source.lambda
+Bucket name                 : clarusway.source.lambda  # kendine göre yaz 
 Region                      : N.Virginia
 Block all public access     : Checked (KEEP BlOCKED)
 Versioning                  : Disabled
@@ -101,7 +101,7 @@ Trigger Configuration : S3
 - Acknowledge         : checked
 ```
 
-STEP 4: Create Function Code
+STEP 4: Create Function Code # Burdan sonra trigger i yap
 
 - Go to the Function Code sub-menu and paste code seen below:
 
@@ -114,7 +114,7 @@ s3_client = boto3.client("s3")
 
 
 def lambda_handler(event, context):
-   destination_bucket_name = 'clarusway.destination.lambda'
+   destination_bucket_name = 'clarusway.destination.lambda'    # oguzhan.destination.lambda
 
    # event contains all information about uploaded object
    print("Event :", event)
@@ -214,7 +214,7 @@ STEP 1: Create Lambda Function
 1. Select Author from scratch
   Name: RandomCityGenerator
   Runtime: Python 3.9
-  Role: Create a new role with basic Lambda permissions
+  Role: Create a new role with basic Lambda permissions # Role tanımlamayacağız
   Click 'Create function'
 ```
 

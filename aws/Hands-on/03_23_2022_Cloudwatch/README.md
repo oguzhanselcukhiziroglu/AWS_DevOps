@@ -502,7 +502,6 @@ log_group_name = /var/log/messages
 - press "I" and paste the following command right after command seen above: 
 
 ```bash
-
 [/var/log/nginx/access.log]
 datetime_format = %b %d %H:%M:%S
 file = /var/log/nginx/access.log
