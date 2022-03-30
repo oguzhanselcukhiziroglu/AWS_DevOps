@@ -130,7 +130,7 @@ Name : Snapshot_Second_Auto
 ```
 ## Part 3 - Creating an Image from the Snapshot of the Root Volume and Launching a new Instance
 
-- Go to EC2 menu and click snapshot section from left-hand menu.
+- Go to EC2 menu and click snapshot section from left-hand menu.   # Volume lere git!!! (Alternatif)
 
 - Click `create snapshot` button.
 ```text
@@ -139,7 +139,7 @@ Instance ID : select the root volume of the SampleInstance
 Name(manually)       : Snapshot_Third 
 ```
 
-- Go to the AMI menu and Click create AMI.
+- Go to the AMI menu and Click create AMI.  # Yani mage oluştur snapshotta iken
 
 ```text
 Name        : ClaruswayAMI_3
@@ -174,7 +174,7 @@ Description : ClaruswayAMI_3
 ## Part 5 - Hosting WordPress on EC2 with AMI
 
 - Create EC2 instnace
-  - AMI: AWS Marketplace  : "WordPress Certified by Bitnami and Automattic" (Free tier)
+  - AMI: AWS Marketplace  : "WordPress Certified by Bitnami and Automatic" (Free tier)
   - Instance type         : t2.micro
   - Volume                : 10Gb is default.***
   - Tag                   : Key=Name, Value= WordPress

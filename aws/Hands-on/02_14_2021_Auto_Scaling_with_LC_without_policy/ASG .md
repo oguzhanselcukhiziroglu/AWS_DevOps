@@ -305,7 +305,7 @@ Do not check
 
 Step 5: Add notifications:
 
-- Click on "Add Notification"
+- Click on "Add Notification"   # Burası SNS'te işlenecek atla burayı
 
 ```text
 Send a notification to:  my-sns-topic
