@@ -34,7 +34,7 @@ At the end of the this hands-on training, students will be able to;
 
 ```text
 Bucket name                 : myfirstbucket-osvaldo-01(instead of "osvaldo", students use their own    
-                              clarusway student number)
+                              clarusway student number)  # unique çünkü
 Region                      : N.Virginia
 Object Ownership            : ACLs enabled - Bucket owner preferred *(Since we'll show "make public" feature we activate it.)
 Block all public access     : Checked (KEEP BlOCKED)
@@ -47,7 +47,7 @@ Object-level logging        : Disabled
 
 - Explain;
 
-  - Naming convention (unique, global),
+  - Naming convention (unique, global),  # bucket name unique olsun kşiiURL unique olsun.
 
   - Why we choose region,
 
@@ -68,11 +68,11 @@ Object-level logging        : Disabled
 ```
 PERMISSIONS >> BLOCK PUBLIC ACCESS>>>> EDIT>>> UNCHECKED 
 ```
-- Select the file uploaded and make it "Public Also."
+- Select the file uploaded and make it "Public Also."   # Objects >> Actions >> Make public
 
 - Open the file URL in the browser, show it is accessible now.
 
-- Create a folder named it as 'images', explain why a folder is also called as prefix in S3
+- Create a folder named it as 'images', explain why a folder is also called as prefix in S3  # Creat folder seçeneği var
 
 - Upload `cat1.jpg` file under `images` folder with `drag and drop`.
 
