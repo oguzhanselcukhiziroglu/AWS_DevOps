@@ -47,10 +47,10 @@ Object-level logging        : Disabled
 
 - Explain;
 
-  - Naming convention (unique, global),  # bucket name unique olsun kşiiURL unique olsun.
+  - Naming convention (unique, global),  # bucket name unique olsun ki URL unique olsun.
 
-  - Why we choose region,
-
+  - Why we choose region,       # Gecikmeyi optimize etmek, maliyetleri en aza indirmek veya yasal gereksinimleri karşılamak
+                                # için coğrafi olarak size yakın olan herhangi bir AWS Bölgesini seçin.
   - Redundancy,
 
   - Availability.

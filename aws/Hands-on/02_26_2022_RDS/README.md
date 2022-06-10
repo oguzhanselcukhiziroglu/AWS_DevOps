@@ -184,6 +184,7 @@ CREATE TABLE `clarusway`.`Personal_Info_2` (
   `Surname` VARCHAR(45) NULL,
   `Gender` VARCHAR(45) NULL,
   `Age` INT NULL,
+  `Salary` INT NULL,
   `Department` VARCHAR(45) NULL,
   PRIMARY KEY (`ID_number`));
 ```
