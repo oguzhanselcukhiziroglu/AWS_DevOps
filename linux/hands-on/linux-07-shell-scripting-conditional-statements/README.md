@@ -24,7 +24,7 @@ At the end of the this hands-on training, students will be able to;
 
 - Part 5 - Boolean Operations
 
-- Part 6- Case Statements
+- Part 6 - Case Statements
 
 ## Part 1 - If Statements
 
@@ -339,7 +339,7 @@ case $operation in
   ;;
   "3")
      echo "result= $(( $first_number * $second_number))" 
-     ;;
+  ;;
   "4")
      echo "result= $(( $first_number / $second_number))"
   ;;
