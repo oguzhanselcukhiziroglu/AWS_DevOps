@@ -47,7 +47,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-configuration-ex
   - Objects created using SSE-S3 using the AWS managed key.
   - Object ACL updates.
 
-* What isn’t replicated:
+* What isn’t replicated: (DENEME)
 
   - Objects that existed before enabling replication (can use the copy API).
   - Objects created with SSE-C and SSE-KMS.
